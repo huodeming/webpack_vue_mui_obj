@@ -10,6 +10,7 @@ import Search from "./components/tabbar/Search.vue";
 //2.创建路由对象
 var router = new VueRouter({
     routes: [
+        {path: '/', redirect: '/home'},
         {path: '/home', component: Home},
         {path: '/member', component: Member},
         {path: '/shopcar', component: Shopcar},

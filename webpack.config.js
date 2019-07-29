@@ -47,6 +47,8 @@ module.exports = {
         alias: {
             //修改vue被导入时候包的路径.
             //"vue$": "vue/dist/vue.js"
+            // 定义别名和插件位置
+            //"mui": './src/lib/mui/js/mui.min.js',
         }
     }
 }

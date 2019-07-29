@@ -2,8 +2,8 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 Vue.use(VueRouter);//把路由注册到Vue中
-import VueSource from 'vue-source';
-Vue.use(VueSource);//把远程请求注册到Vue中
+import VueResource from 'vue-resource';
+Vue.use(VueResource);//把远程请求注册到Vue中
 
 import router from './router.js';//导入路由文件,里面有个export default;
 
@@ -17,9 +17,11 @@ Vue.component(Swipe.name, Swipe);
 Vue.component(SwipeItem.name, SwipeItem);
 
 //导入MUI相关
+import mui from "./lib/mui/js/mui.js";//这么用一直报错,可能是mui.js中没有export default进行向外暴露对象.最后把babel-loader的配置(.babelrc)文件中加入了忽略严格模式转换节点:"ignore": ["./src/lib/mui/js/*.js",] 好了,可以用了.
+//Vue.use(mui);//这么用报错,用不了
+Vue.prototype.$mui = mui;//这么用不报错.就这么干了.....全局引入 那么后续的vm实例都有一个 this.$mui的对象了.
 import "./lib/mui/css/mui.css";
 import "./lib/mui/css/icons-extra.css";
-
 
 
 import App from './App.vue';
@@ -27,7 +29,7 @@ import App from './App.vue';
 
 var vm = new Vue({
     el:'#app',
-    //component:{ App },
+    //component:{ App },//runtime的Vue不能这么用
     render: c => c(App),//会把App中内容覆盖到index.html中的#app标签,所以router-link与router-view要写在App.vue文件中. 
     router  //将路由对象挂载到 vm 实例上
 });
