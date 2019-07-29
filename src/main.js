@@ -5,7 +5,13 @@ Vue.use(VueRouter);//把路由注册到Vue中
 import VueSource from 'vue-source';
 Vue.use(VueSource);//把远程请求注册到Vue中
 
+//导入Mint-ui组件相关
+import "mint-ui/lib/style.min.css";
+import { Header } from 'mint-ui';
+Vue.component(Header.name, Header);
 
+//导入MUI相关
+import "./lib/mui-master/dist/css/mui.css";
 
 
 
