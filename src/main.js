@@ -4,6 +4,7 @@ import VueRouter from 'vue-router';
 Vue.use(VueRouter);//把路由注册到Vue中
 import VueResource from 'vue-resource';
 Vue.use(VueResource);//把远程请求注册到Vue中
+Vue.http.options.root = 'http://localhost/webpack_vue_mui_obj_php/';
 
 import router from './router.js';//导入路由文件,里面有个export default;
 
@@ -22,6 +23,12 @@ Vue.component(SwipeItem.name, SwipeItem);
 //Vue.prototype.$mui = mui;//这么用不报错.就这么干了.....全局引入 那么后续的vm实例都有一个 this.$mui的对象了. 没用.最后与路由冲突....
 import "./lib/mui/css/mui.css";
 import "./lib/mui/css/icons-extra.css";
+
+import moment from 'moment';
+//定义一个全局过滤器,用来格式化日期或时间
+Vue.filter('dateFormat', function(dateStr, pattern="YYYY-MM-DD HH:mm"){
+    return moment(dateStr).format(pattern);
+});
 
 
 import App from './App.vue';

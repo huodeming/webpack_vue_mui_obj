@@ -7,33 +7,42 @@
         <!-- 中间九宫格 -->
         <div class="mui-content">
             <ul class="mui-table-view mui-grid-view mui-grid-9">
-                <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
-                        <span class="mui-icon mui-icon-home"></span>
-                        <div class="mui-media-body">Home</div></a></li>
-                <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
-                        <span class="mui-icon mui-icon-email"><span class="mui-badge">5</span></span>
-                        <div class="mui-media-body">Email</div></a></li>
-                <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
-                        <span class="mui-icon mui-icon-chatbubble"></span>
-                        <div class="mui-media-body">Chat</div></a></li>
-                <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
-                        <span class="mui-icon mui-icon-location"></span>
-                        <div class="mui-media-body">location</div></a></li>
-                <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
-                        <span class="mui-icon mui-icon-search"></span>
-                        <div class="mui-media-body">Search</div></a></li>
-                <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
-                        <span class="mui-icon mui-icon-phone"></span>
-                        <div class="mui-media-body">Phone</div></a></li>
-                <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
-                        <span class="mui-icon mui-icon-gear"></span>
-                        <div class="mui-media-body">Setting</div></a></li>
-                <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
-                        <span class="mui-icon mui-icon-info"></span>
-                        <div class="mui-media-body">about</div></a></li>
-                <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
-                        <span class="mui-icon mui-icon-more"></span>
-                        <div class="mui-media-body">more</div></a></li>
+                <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+                    <router-link to="/home/newlist">
+                        <img src="../../images/menu1.png">
+                        <div class="mui-media-body">新闻资讯</div>
+                    </router-link>
+                </li>
+                <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+                    <a href="#">
+                        <img src="../../images/menu2.png">
+                        <div class="mui-media-body">图片分享</div>
+                    </a>
+                </li>
+                <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+                    <a href="#">
+                        <img src="../../images/menu3.png">
+                        <div class="mui-media-body">商品购买</div>
+                    </a>
+                </li>
+                <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+                    <a href="#">
+                        <img src="../../images/menu4.png">
+                        <div class="mui-media-body">留言反馈</div>
+                    </a>
+                </li>
+                <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+                    <a href="#">
+                        <img src="../../images/menu5.png">
+                        <div class="mui-media-body">视频专区</div>
+                    </a>
+                </li>
+                <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+                    <a href="#">
+                        <img src="../../images/menu6.png">
+                        <div class="mui-media-body">联系我们</div>
+                    </a>
+                </li>
             </ul> 
 		</div>
 
@@ -77,7 +86,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
     /* 设置高度,在页面上才显示,不然高度是0 */
     .mint-swipe{
         height: 200px;
@@ -99,6 +108,20 @@ export default {
         width: 100%;
         height: 100%;
     }
+    .mui-grid-view.mui-grid-9,.mui-grid-view.mui-grid-9 .mui-table-view-cell{
+        background-color: #fff;
+        border: none;
+        img{
+            width: 60px;
+            height: 60px;
+        }
+    }
+    .mui-table-view:before{
+        background-color: #fff;
+    }
+
 </style>
+
+
 
 
