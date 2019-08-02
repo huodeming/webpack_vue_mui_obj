@@ -52,6 +52,7 @@
 </template>
 
 <script>
+import { Toast } from 'mint-ui';
 		// mui.init({
 		// });
 		// var slider = mui("#slider");
@@ -73,9 +74,15 @@ export default {
                     this.lunbotu = result.body.list;
                 }else{
                     Toast({
+                        position: 'top',
                         message: '轮播图加载失败!',
                     });
                 }
+            },(err) => {
+                Toast({
+                    position: 'top',
+                     message: '轮播图加载失败!',
+                });
             });
         },
     },
