@@ -6,8 +6,7 @@
         <span>点击: {{ newinfo.count }} 次</span>
     </p>
     <hr>
-    <div v-html="newinfo.content" class="content">
-    </div>
+    <div v-html="newinfo.content" class="content"></div>
     <comment-box :cid="id" :mid="'1'"></comment-box>
 </div>
     
@@ -55,7 +54,7 @@ export default {
         color: #226aff;
         display: flex;
         justify-content: space-between;
-        }
+    }
     .content >>> p{
         text-indent: 2em;
         line-height: 2em

@@ -8,6 +8,8 @@ import Shopcar from "./components/tabbar/Shopcar.vue";
 import Search from "./components/tabbar/Search.vue";
 import NewList from './components/news/NewsList.vue';
 import NewInfo from './components/news/NewsInfo.vue';
+import Photolist from './components/photos/PhotoList.vue';
+import Photoinfo from './components/photos/Photoinfo.vue';
 
 //2.创建路由对象
 var router = new VueRouter({
@@ -19,6 +21,8 @@ var router = new VueRouter({
         {path: '/search', component: Search},
         {path: '/home/newlist', component: NewList},
         {path: '/home/newinfo/:id', component: NewInfo},
+        {path: '/home/photolist', component: Photolist},
+        {path: '/home/photoinfo/:cid', component: Photoinfo},
     ],
     linkActiveClass: "mui-active",//如不设置它,默认值是:link-router-active
 });
