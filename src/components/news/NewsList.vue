@@ -3,7 +3,7 @@
         <ul class="mui-table-view">
             <li v-for="item in news" :key="item.id" class="mui-table-view-cell mui-media">
                 <router-link :to="'/home/newinfo/' + item.id">
-                    <img class="mui-media-object mui-pull-left" :src="'http://localhost/webpack_vue_mui_obj_php/'+ item.img_url">
+                    <img class="mui-media-object mui-pull-left" :src="$http.options.root + item.img_url">
                     <div class="mui-media-body">
                         <h1>{{item.title}}</h1>
                         <p class='mui-ellipsis'>
@@ -28,7 +28,7 @@ export default {
     },
     methods:{
         getnews: function(){
-            this.$http.jsonp('http://localhost/webpack_vue_mui_obj_php/newslist.php').then((result) => {
+            this.$http.jsonp('newslist.php').then((result) => {
                 if(result.body.status == 0){
                     //console.log(result.body.news);
                     this.news = result.body.news;

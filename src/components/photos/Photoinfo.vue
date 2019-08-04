@@ -28,32 +28,16 @@ export default {
         return {
             cid: this.$route.params.cid,
             imginfo:{},
-            slide1: [
-            {
-                src: 'https://farm6.staticflickr.com/5591/15008867125_68a8ed88cc_b.jpg',
-                msrc: 'https://farm6.staticflickr.com/5591/15008867125_68a8ed88cc_m.jpg',
-                alt: 'picture1',
-                title: 'Image Caption 1',
-                w: 3000,
-                h: 2000
-            },
-            {
-                src: 'https://farm4.staticflickr.com/3902/14985871946_86abb8c56f_b.jpg',
-                msrc: 'https://farm4.staticflickr.com/3902/14985871946_86abb8c56f_m.jpg',
-                alt: 'picture2',
-                title: 'Image Caption 2',
-                w: 1200,
-                h: 900
-            }
-            ]
+            slide1: []
         }
     },
     methods:{
         getImgInfo: function(){
             this.$http.get('img-info.php?cid=' + this.cid).then((result) => {
-                console.log(result);
+                //console.log(result);
                 if(result.body.status == 0){
                     this.imginfo = result.body.imginfo;
+                    this.slide1 = result.body.imglist;
                 }else{
 
                 }
@@ -90,8 +74,14 @@ export default {
         justify-content: space-between;
     }
     .imgs-thumb >>> img{
-        width: 100%;
+        width: 30%;
         height: auto;
+        float: left;
+        margin: 5px 5px 5px 0; 
+    }
+    .content{
+        clear: both;
+        color: #444;
     }
 
 </style>

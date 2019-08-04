@@ -13,8 +13,8 @@ Vue.http.interceptors.push(function(request, next) {
     next();
 })
 Vue.http.options.emulateJSON = true;//如果web服务器无法处理 application/json的请求，我们可以启用 emulateJSON 选项；POST请求数据用JSON格式必须这么设置
-Vue.http.options.root = 'http://localhost/webpack_vue_mui_obj_php/';
-
+Vue.http.options.root = 'http://192.168.203.104/webpack_vue_mui_obj_php/';
+console.log(Vue.http.options.root);
 
 import router from './router.js';//导入路由文件,里面有个export default;
 

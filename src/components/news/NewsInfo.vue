@@ -23,7 +23,7 @@ export default {
     },
     methods: {
         getNewsInfo : function(){
-            this.$http.jsonp("http://localhost/webpack_vue_mui_obj_php/newsinfo.php?id=" + this.id).then((result) => {
+            this.$http.jsonp("newsinfo.php?id=" + this.id).then((result) => {
                 if(result.body.status == 0){
                     this.newinfo = result.body.newinfo;
                 }

@@ -4,14 +4,15 @@
         <div id="slider" class="mui-slider">
             <div id="sliderSegmentedControl" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
                 <div class="mui-scroll">
-                    <a class="mui-control-item mui-active" href="#">全部</a>
-                    <a v-for="item in groups" :key="item.id" class="mui-control-item" href="#" @click="getimages(item.gid)">{{item.gname}}</a>
+                    <a class="mui-control-item mui-active" href="#" @click="getimages(0)">全部</a>
+                    <!-- 注意:只有MUI的组件才能用@tap事件.如果用@click在部分浏览器下点击不正常 -->
+                    <a v-for="item in groups" :key="item.id" class="mui-control-item" href="#" @tap="getimages(item.gid)">{{item.gname}}</a>
                 </div>
             </div>
         </div>
         <ul class="imglists">
             <router-link :to="'/home/photoinfo/' + item.cid" tag="li" v-for="item in imglist" :key="item.id">
-                <img v-lazy="'http://localhost/webpack_vue_mui_obj_php/'+item.img_url">
+                <img v-lazy="$http.options.root+item.img_url">
                 <div class="info">
                     <h2 class="info-title">{{item.title}}</h2>
                     <div class="info-body">{{item.zhaiyao}}</div>

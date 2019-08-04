@@ -2,7 +2,7 @@
     <div>
         <!-- mint-ui轮播图 -->
         <mt-swipe :auto="4000">
-            <mt-swipe-item v-for="(item, i) in lunbotu" :key="i" ><img :src="'http://localhost/webpack_vue_mui_obj_php/'+item" /></mt-swipe-item>
+            <mt-swipe-item v-for="(item, i) in lunbotu" :key="i" ><img :src="$http.options.root+item" /></mt-swipe-item>
         </mt-swipe>
         <!-- 中间九宫格 -->
         <div class="mui-content">
@@ -47,7 +47,7 @@
 		</div>
 
 
-        <h1>主页</h1>
+        <!-- <h1>主页</h1> -->
     </div>
 </template>
 
@@ -68,7 +68,7 @@ export default {
     methods:{
         //获取轮播图数据的方法
         getLunbotu(){
-            this.$http.jsonp('http://localhost/webpack_vue_mui_obj_php/lunbotu.php').then(result => {
+            this.$http.jsonp('lunbotu.php').then(result => {
                 //console.log(result);
                 if(result.body.status === 0 && result.body.length > 0){
                     this.lunbotu = result.body.list;
